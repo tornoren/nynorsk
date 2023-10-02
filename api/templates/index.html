@@ -1,45 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nynorsk for alle</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
-</head>
-
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/css/output.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css"
+    />
+  </head>
 <body>
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <!-- Headline added -->
-        <h1 class="text-3xl font-bold mb-8">Nynorsk nå</h1>
-        <!-- Increased form size by 1.5 -->
-        <div class="w-full max-w-xl p-12 space-y-8 bg-white rounded-md shadow-lg">
-          <div class="flex flex-col space-y-4">
-            <!-- Reduced label text size -->
-            <label for="text-input" class="text-base font-medium">Innhaldet du vil oversetje</label>
-            <!-- Enlarged input box to 5 lines -->
-            <textarea id="text-input" rows="5" class="w-full p-3 border rounded-md focus:ring focus:ring-opacity-50 focus:border-blue-300"></textarea>
-          </div>
-          <div class="flex flex-col space-y-4">
-            <!-- Reduced label text size -->
-            <label class="text-base font-medium">Stil</label>
-            <div class="relative">
-              <input type="range" min="1" max="10" class="w-full h-2 bg-gray-300 rounded-full appearance-none">
-              <div class="absolute left-0 text-sm text-gray-500">Kansellistil</div>
-              <div class="absolute right-0 text-sm text-gray-500">Klart språk</div>
-            </div>
-          </div>
-          <!-- Left-aligned CTA button -->
-          <div class="flex">
-            <button class="px-6 py-3 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-              Gje meg nynorsk
-            </button>
-          </div>
+ <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <h1 class="text-3xl font-bold mb-8">Nynorsk for alle</h1>
+  <div class="w-full max-w-xl p-12 space-y-8 bg-white rounded-md shadow-lg">
+    <ul class="flex justify-center text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+      <li class="mr-2">
+          <a href="#" class="inline-block px-4 py-3 text-white bg-blue-600 rounded-lg active" aria-current="page">Oversetting</a>
+      </li>
+      <li class="mr-2">
+          <a href="#"  class="inline-block px-4 py-3 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">Stilendring</a>
+      </li>
+      <li class="mr-2">
+          <a href="#" class="inline-block px-4 py-3 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">Imitering</a>
+      </li>
+    </ul>
+    <div id="Oversetting" class="flex flex-col space-y-4">
+      <label for="text-input" class="text-base">Innhaldet du vil oversette</label>
+      <textarea id="text-input" rows="5" class="w-full p-3 border rounded-md focus:ring focus:ring-opacity-50 focus:border-blue-300"></textarea>
+    
+    <div id="Stilendring" class="flex flex-col space-y-4">
+      <label for="text-input" class="text-base">Innhaldet du gi ny stil</label>
+      <textarea id="text-input" rows="5" class="w-full p-3 border rounded-md focus:ring focus:ring-opacity-50 focus:border-blue-300"></textarea>
+    
+    <div id="Imitering" class="flex flex-col space-y-4">
+      <label for="text-input" class="text-base">Innhaldet du vil gi identitet</label>
+      <textarea id="text-input" rows="5" class="w-full p-3 border rounded-md focus:ring focus:ring-opacity-50 focus:border-blue-300"></textarea>
+    
+
+    <div id="style-options" class="space-y-12">
+      <div id="idealSlider">
+        <label class="text-base space-y-40">Stil</label>
+        <div class="relative mb-8">
+          <input type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-300 rounded-full appearance-none" />
+          <div class="absolute left-0 text-sm text-gray-500">Maskinelt</div>
+          <div class="absolute right-0 text-sm text-gray-500">Menneskeleg</div>
         </div>
       </div>
-      
-    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
-</body>
 
+      <div id="authorInspiration">
+        <label class="text-base space-y-8">Imitasjon</label>
+          <div class="flex flex-col space-y-16">
+            <label class="inline-flex items-center">
+              <input
+                type="radio"
+                class="form-radio"
+                name="authorInspiration"
+                value="Jon Hustad"
+              />
+              <span class="ml-2">Jon Hustad</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input
+                type="radio"
+                class="form-radio"
+                name="authorInspiration"
+                value="Olav H. Hauge"
+              />
+              <span class="ml-2">Olav H. Hauge</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input
+                type="radio"
+                class="form-radio"
+                name="authorInspiration"
+                value="Solveig Aareskjold"
+              />
+              <span class="ml-2">Solveig Aareskjold</span>
+            </label>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <!-- Left-aligned CTA button -->
+        <div class="flex">
+          <button
+            id="openModalButton"
+            class="px-6 py-3 mt-8 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
+          >
+            Gje meg nynorsk
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- The Modal -->
+    <div
+      id="myModal"
+      class="fixed inset-0 z-50 flex items-center justify-center hidden w-full h-screen bg-black bg-opacity-50"
+    >
+      
+    <div class="w-full max-w-screen-sm sm:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto p-12 space-y-8 bg-white rounded-md shadow-lg">
+
+
+
+        <div class="flex justify-between">
+          <h2 class="text-xl font-bold">Teksten din på nynorsk</h2>
+          <button id="closeModalButton" class="text-lg font-bold text-gray-700">
+            ×
+          </button>
+        </div>
+        <div class="mt-4">
+          <p id="translatedText" class="text-base text-gray-700"></p>
+        </div>
+        <button
+          id="copyToClipboardButton"
+          class="mt-6 px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          <svg
+            class="w-3 h-3 text-white-800 mr-2 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 18 20"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m7.708 2.292.706-.706A2 2 0 0 1 9.828 1h6.239A.97.97 0 0 1 17 2v12a.97.97 0 0 1-.933 1H15M6 5v4a1 1 0 0 1-1 1H1m11-4v12a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V9.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 5h5.239A.97.97 0 0 1 12 6Z"
+            />
+          </svg>
+
+          Kopier teksten
+        </button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const openModalButton = document.getElementById("openModalButton");
+        const closeModalButton = document.getElementById("closeModalButton");
+        const myModal = document.getElementById("myModal");
+        const translatedText = document.getElementById("translatedText");
+
+        openModalButton.addEventListener("click", function (event) {
+          event.preventDefault();
+          const textInput = document.getElementById("text-input").value;
+          const sliderValue = document.querySelector("input[type=range]").value;
+
+          fetch("/api/translate", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ text: textInput, style: sliderValue }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              translatedText.innerHTML = data.result; // Replace this with the actual translated text
+              myModal.classList.remove("hidden");
+            });
+        });
+
+        closeModalButton.addEventListener("click", function () {
+          myModal.classList.add("hidden");
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // ... existing code ...
+
+        const copyToClipboardButton = document.getElementById(
+          "copyToClipboardButton"
+        );
+
+        copyToClipboardButton.addEventListener("click", function () {
+          const textToCopy =
+            document.getElementById("translatedText").innerText;
+          navigator.clipboard
+            .writeText(textToCopy)
+            .then(() => {
+              // You can add a tooltip or message saying "Copied!"
+              alert("Nå hev du ein kopi på minnetavla di");
+            })
+            .catch((err) => {
+              // Handle errors here
+              console.error("Could not copy text: ", err);
+            });
+        });
+      });
+    </script>
+  </body>
 </html>
