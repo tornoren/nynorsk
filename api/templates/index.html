@@ -30,18 +30,10 @@
       </li>
     </ul>
     <div id="Oversetting" class="flex flex-col space-y-4">
-      <label for="text-input" class="text-base">Innhaldet du vil oversette</label>
+      <label for="text-input" class="text-base">Bokmålet du vil bli kvitt</label>
       <textarea id="text-input" rows="5" class="w-full p-3 border rounded-md focus:ring focus:ring-opacity-50 focus:border-blue-300"></textarea>
     
-    <div id="Stilendring" class="flex flex-col space-y-4">
-      <label for="text-input" class="text-base">Innhaldet du gi ny stil</label>
-      <textarea id="text-input" rows="5" class="w-full p-3 border rounded-md focus:ring focus:ring-opacity-50 focus:border-blue-300"></textarea>
-    
-    <div id="Imitering" class="flex flex-col space-y-4">
-      <label for="text-input" class="text-base">Innhaldet du vil gi identitet</label>
-      <textarea id="text-input" rows="5" class="w-full p-3 border rounded-md focus:ring focus:ring-opacity-50 focus:border-blue-300"></textarea>
-    
-
+ 
     <div id="style-options" class="space-y-12">
       <div id="idealSlider">
         <label class="text-base space-y-40">Stil</label>
@@ -52,9 +44,9 @@
         </div>
       </div>
 
-      <div id="authorInspiration">
+      <div id="authorInspiration" class="space-y-12">
         <label class="text-base space-y-8">Imitasjon</label>
-          <div class="flex flex-col space-y-16">
+          <div class="flex flex-col space-y-32">
             <label class="inline-flex items-center">
               <input
                 type="radio"
@@ -147,60 +139,7 @@
     </div>
 
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const openModalButton = document.getElementById("openModalButton");
-        const closeModalButton = document.getElementById("closeModalButton");
-        const myModal = document.getElementById("myModal");
-        const translatedText = document.getElementById("translatedText");
-
-        openModalButton.addEventListener("click", function (event) {
-          event.preventDefault();
-          const textInput = document.getElementById("text-input").value;
-          const sliderValue = document.querySelector("input[type=range]").value;
-
-          fetch("/api/translate", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ text: textInput, style: sliderValue }),
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              translatedText.innerHTML = data.result; // Replace this with the actual translated text
-              myModal.classList.remove("hidden");
-            });
-        });
-
-        closeModalButton.addEventListener("click", function () {
-          myModal.classList.add("hidden");
-        });
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // ... existing code ...
-
-        const copyToClipboardButton = document.getElementById(
-          "copyToClipboardButton"
-        );
-
-        copyToClipboardButton.addEventListener("click", function () {
-          const textToCopy =
-            document.getElementById("translatedText").innerText;
-          navigator.clipboard
-            .writeText(textToCopy)
-            .then(() => {
-              // You can add a tooltip or message saying "Copied!"
-              alert("Nå hev du ein kopi på minnetavla di");
-            })
-            .catch((err) => {
-              // Handle errors here
-              console.error("Could not copy text: ", err);
-            });
-        });
-      });
-    </script>
   </body>
 </html>
