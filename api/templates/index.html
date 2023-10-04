@@ -32,30 +32,30 @@
             </li>  
           </ul>
       </div>
-    <div id="translation" class="flex flex-col space-y-4">
+    <div id="translation" class="flex flex-col space-y-3">
       <label for="text-input" class="text-base">Bokmålet</label>
       <textarea id="text-input" rows="5" class="w-full p-3 border rounded-md focus:ring focus:ring-opacity-50 focus:border-blue-300"></textarea>
     </div>
-    <div id="style" class="hidden flex-col mb-16">
-        <label class="text-base">Endre stil på teksten</label>
+    <div id="style" class="hidden flex-col space-y-3">
+        <label class="text-base">Endre stilen</label>
         <div class="relative ">
-          <input type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-300 rounded-full appearance-none" />
+          <input type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-300 my-3 rounded-full appearance-none" />
           <div class="absolute left-0 text-sm text-gray-500">Maskinelt</div>
           <div class="absolute right-0 text-sm text-gray-500">Menneskeleg</div>
         </div>
     </div>
-    <div id="imitation" class="hidden flex-col">
-      <label for="authorInspiration" class="text-base mb-2">Velg ein person å imitere</label>
-      <div class="flex flex-col mb-4">
-        <label class="inline-flex items-center mb-2">
+    <div id="imitation" class="hidden flex-col space-y-3">
+      <label for="authorInspiration" class="text-base space-y-2">Velg ein person å ape etter</label>
+      <div class="flex flex-col space-y-2">
+        <label class="inline-flex items-center">
           <input type="radio" id="jonHustad" class="form-radio" name="authorInspiration" value="Jon Hustad" />
           <span class="ml-2">Jon Hustad</span>
         </label>
-        <label class="inline-flex items-center mb-2">
+        <label class="inline-flex items-center">
           <input type="radio" id="olavHauge" class="form-radio" name="authorInspiration" value="Olav H. Hauge" />
           <span class="ml-2">Olav H. Hauge</span>
         </label>
-        <label class="inline-flex items-center mb-2">
+        <label class="inline-flex items-center">
           <input type="radio" id="solveigAareskjold" class="form-radio" name="authorInspiration" value="Solveig Aareskjold" />
           <span class="ml-2">Solveig Aareskjold</span>
         </label>
