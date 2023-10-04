@@ -9,12 +9,13 @@ const translationContent = document.getElementById('translation');
 const styleContent = document.getElementById('style');
 const imitationContent = document.getElementById('imitation');
 
-// Function to remove 'active' class from all tabs
+// Function to remove 'bg-sky-500' class from all tabs
 function removeActiveClassFromTabs() {
-  translationTab.classList.remove('active');
-  styleTab.classList.remove('active');
-  imitationTab.classList.remove('active');
+  translationTab.classList.remove('bg-sky-500');
+  styleTab.classList.remove('bg-sky-500');
+  imitationTab.classList.remove('bg-sky-500');
 }
+
 
 // Add click event listeners to the tabs
 translationTab.addEventListener('click', function(event) {
@@ -25,7 +26,7 @@ translationTab.addEventListener('click', function(event) {
   imitationContent.style.display = 'none'
 
   removeActiveClassFromTabs();
-  translationTab.classList.add('active');
+  translationTab.classList.add('bg-sky-500');
 });
 
 styleTab.addEventListener('click', function(event) {
@@ -38,7 +39,7 @@ styleTab.addEventListener('click', function(event) {
   imitationContent.style.display = 'none';
 
   removeActiveClassFromTabs();
-  styleTab.classList.add('active');
+  styleTab.classList.add('bg-sky-500');
 });
 
 imitationTab.addEventListener('click', function(event) {
@@ -51,14 +52,14 @@ imitationTab.addEventListener('click', function(event) {
   imitationContent.style.display = 'block';
 
   removeActiveClassFromTabs();
-  imitationTab.classList.add('active');
+  imitationTab.classList.add('bg-sky-500');
 });
 
 // Show the translation content by default
 styleContent.style.display = 'none';
 imitationContent.style.display = 'none';
 translationContent.style.display = 'block';
-translationTab.classList.add('active');
+translationTab.classList.add('bg-sky-500');
 
 
 function translateText() {
