@@ -1,31 +1,3 @@
-// Get the tab elements
-const tabs = document.querySelectorAll('#form li');
-
-// Get the content elements
-const content = document.querySelectorAll('#form > div:not(.flex)');
-
-// Loop through the tab elements and add event listeners
-tabs.forEach((tab, index) => {
-  tab.addEventListener('click', () => {
-    // Remove active class from all tabs
-    tabs.forEach((tab) => {
-      tab.classList.remove('active');
-    });
-    
-    // Hide all content elements
-    content.forEach((c) => {
-      c.classList.add('hidden');
-    });
-    
-    // Add active class to the clicked tab
-    tab.classList.add('active');
-    
-    // Show the corresponding content
-    content[index].classList.remove('hidden');
-  });
-});
-
-
 
 // Get the tab elements
 const translationTab = document.getElementById('translation_tab');
@@ -37,9 +9,12 @@ const translationContent = document.getElementById('translation');
 const styleContent = document.getElementById('style');
 const imitationContent = document.getElementById('imitation');
 
-// Hide the style and imitation content initially
-styleContent.style.display = 'none';
-imitationContent.style.display = 'none';
+// Function to remove 'active' class from all tabs
+function removeActiveClassFromTabs() {
+  translationTab.classList.remove('active');
+  styleTab.classList.remove('active');
+  imitationTab.classList.remove('active');
+}
 
 // Add click event listeners to the tabs
 translationTab.addEventListener('click', function(event) {
@@ -48,6 +23,9 @@ translationTab.addEventListener('click', function(event) {
   translationContent.style.display = 'block';
   styleContent.style.display = 'none';
   imitationContent.style.display = 'none'
+
+  removeActiveClassFromTabs();
+  translationTab.classList.add('active');
 });
 
 styleTab.addEventListener('click', function(event) {
@@ -58,6 +36,9 @@ styleTab.addEventListener('click', function(event) {
   translationContent.style.display = 'block';
   styleContent.style.display = 'block';
   imitationContent.style.display = 'none';
+
+  removeActiveClassFromTabs();
+  styleTab.classList.add('active');
 });
 
 imitationTab.addEventListener('click', function(event) {
@@ -68,10 +49,16 @@ imitationTab.addEventListener('click', function(event) {
   translationContent.style.display = 'block';
   styleContent.style.display = 'none';
   imitationContent.style.display = 'block';
+
+  removeActiveClassFromTabs();
+  imitationTab.classList.add('active');
 });
 
 // Show the translation content by default
+styleContent.style.display = 'none';
+imitationContent.style.display = 'none';
 translationContent.style.display = 'block';
+translationTab.classList.add('active');
 
 
 function translateText() {
