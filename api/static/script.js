@@ -9,13 +9,6 @@ const translationContent = document.getElementById('translation');
 const styleContent = document.getElementById('style');
 const imitationContent = document.getElementById('imitation');
 
-// Function to remove 'bg-sky-500' class from all tabs
-function removeActiveClassFromTabs() {
-  translationTab.classList.remove('bg-sky-500');
-  styleTab.classList.remove('bg-sky-500');
-  imitationTab.classList.remove('bg-sky-500');
-}
-
 
 // Add click event listeners to the tabs
 translationTab.addEventListener('click', function(event) {
@@ -25,8 +18,6 @@ translationTab.addEventListener('click', function(event) {
   styleContent.style.display = 'none';
   imitationContent.style.display = 'none'
 
-  removeActiveClassFromTabs();
-  translationTab.classList.add('bg-sky-500');
 });
 
 styleTab.addEventListener('click', function(event) {
@@ -38,8 +29,6 @@ styleTab.addEventListener('click', function(event) {
   styleContent.style.display = 'block';
   imitationContent.style.display = 'none';
 
-  removeActiveClassFromTabs();
-  styleTab.classList.add('bg-sky-500');
 });
 
 imitationTab.addEventListener('click', function(event) {
@@ -51,15 +40,12 @@ imitationTab.addEventListener('click', function(event) {
   styleContent.style.display = 'none';
   imitationContent.style.display = 'block';
 
-  removeActiveClassFromTabs();
-  imitationTab.classList.add('bg-sky-500');
 });
 
 // Show the translation content by default
 styleContent.style.display = 'none';
 imitationContent.style.display = 'none';
 translationContent.style.display = 'block';
-translationTab.classList.add('bg-sky-500');
 
 
 function translateText() {
