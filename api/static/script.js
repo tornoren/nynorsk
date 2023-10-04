@@ -1,3 +1,51 @@
+// Get the tab elements
+const translationTab = document.getElementById('translation_tab');
+const styleTab = document.getElementById('style_tab');
+const imitationTab = document.getElementById('imitation_tab');
+
+// Get the content elements
+const translationContent = document.getElementById('translation');
+const styleContent = document.getElementById('style');
+const imitationContent = document.getElementById('imitation');
+
+// Hide the style and imitation content initially
+styleContent.style.display = 'none';
+imitationContent.style.display = 'none';
+
+// Add click event listeners to the tabs
+translationTab.addEventListener('click', function(event) {
+  event.preventDefault();
+
+  translationContent.style.display = 'block';
+  styleContent.style.display = 'none';
+  imitationContent.style.display = 'none'
+});
+
+styleTab.addEventListener('click', function(event) {
+  // Prevent the default behavior of the link
+  event.preventDefault();
+
+  // Show/hide the corresponding content
+  translationContent.style.display = 'block';
+  styleContent.style.display = 'block';
+  imitationContent.style.display = 'none';
+});
+
+imitationTab.addEventListener('click', function(event) {
+  // Prevent the default behavior of the link
+  event.preventDefault();
+
+  // Show/hide the corresponding content
+  translationContent.style.display = 'block';
+  styleContent.style.display = 'none';
+  imitationContent.style.display = 'block';
+});
+
+
+// Show the translation content by default
+translationContent.style.display = 'block';
+
+
 function translateText() {
     const openModalButton = document.getElementById("openModalButton");
     const closeModalButton = document.getElementById("closeModalButton");
