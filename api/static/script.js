@@ -1,4 +1,6 @@
 
+
+
 // Get the tab elements
 const translationTab = document.getElementById('translation_tab');
 const styleTab = document.getElementById('style_tab');
