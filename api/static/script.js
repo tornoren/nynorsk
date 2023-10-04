@@ -1,4 +1,33 @@
 // Get the tab elements
+const tabs = document.querySelectorAll('#form li');
+
+// Get the content elements
+const content = document.querySelectorAll('#form > div:not(.flex)');
+
+// Loop through the tab elements and add event listeners
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => {
+    // Remove active class from all tabs
+    tabs.forEach((tab) => {
+      tab.classList.remove('active');
+    });
+    
+    // Hide all content elements
+    content.forEach((c) => {
+      c.classList.add('hidden');
+    });
+    
+    // Add active class to the clicked tab
+    tab.classList.add('active');
+    
+    // Show the corresponding content
+    content[index].classList.remove('hidden');
+  });
+});
+
+
+
+// Get the tab elements
 const translationTab = document.getElementById('translation_tab');
 const styleTab = document.getElementById('style_tab');
 const imitationTab = document.getElementById('imitation_tab');
@@ -40,7 +69,6 @@ imitationTab.addEventListener('click', function(event) {
   styleContent.style.display = 'none';
   imitationContent.style.display = 'block';
 });
-
 
 // Show the translation content by default
 translationContent.style.display = 'block';
