@@ -41,10 +41,10 @@
       <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
         <ul class="flex flex-wrap justify-center -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
             <li class="mr-2" role="presentation">
-                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="translation_tab" data-tabs-target="#translation" type="button" role="tab" aria-controls="translation" aria-selected="false">Oversetting</button>
+                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="translation_tab" data-tabs-target="#translation" type="button" role="tab" aria-controls="translation" aria-selected="false">Omsetting</button>
             </li>
             <li class="mr-2" role="presentation">
-              <button class="inline-block p-4 border-b-2 rounded-t-lg" id="about_tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false">Om tjenesten</button>
+              <button class="inline-block p-4 border-b-2 rounded-t-lg" id="about_tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false">Om tenesta</button>
           </li>
            
             <!--
@@ -58,16 +58,36 @@
           </ul>
       </div>
     <div id="translation" class="flex flex-col space-y-3">
-      <label for="text-input" class="text-base">Bokmålet</label>
+      <label for="text-input" class="text-base">Bokmålet du vil gjere om</label>
       <textarea id="text-input" rows="5" class="w-full p-3 border rounded-md focus:ring focus:ring-opacity-50 focus:border-blue-300"></textarea>
     </div>
     <div id="about" class="hidden flex-col space-y-3">
       
-      <div class="relative text-lg">
-        <h2 class="text-lg">Om Nynorsk for alle</h2>
-        <p class="text-base">Denne tjenesten kan du bruke til å oversette bokmål til nynorsk. </p>
-      </div>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-2/3">
+      <p class="mb-4">
+        Denne tenesta er eit samarbeid mellom menneske og maskin. Målet er å vise at kognitivt kjedearbeid er noko vi kan bruke maskinen til, spesielt i det høvet der offentlege nettstader treng store mengder nynorsk innhald som ingen nokon gong vil kome i kontakt med. </p>
+        <p class="mb-4">Med AI i handa kan vi gjere loven nøgd.</p>
+    
+      <h2 class="text-lg font-bold mb-2">Slik verkar denne maskinen</h3>
+      <ul class="list-disc list-inside mb-4">
+        <li class="my-2">Omsetting-API: Når du klikkar på den blå knappen, blir ein POST-førespurnad sendt til <code>/api/translate</code>-endepunktet. Teksten blir sendt som ein JSON-last.</li>
+        <li class="my-2">Tenarhandsaming: Tenaren mottar førespurnaden og fører teksten gjennom ein omsetjingsmotor.</li>
+        <li class="my-2">Omsetting: OpenAI sin GPT 3.5-modell omdannar målet til nynorsk og sender resultatet som eit JSON-objekt.</li>
+      </ul>
+      <p><a class="text-blue-600 underline-offset-2" href="https:/torstein.io/om">Torstein Norendal </a>har utvikla dette saman med ChatGPT. Skulle nokon ha bruk for denne tenesta meir enn som kuriosa, ta kontakt med meg.</p> 
     </div>
+  <!--
+  <div class="md:w-1/3 flex justify-end">
+    <img src="torstein-norendal.png" alt="Torstein Norendal" class="rounded-full w-32 h-32 object-cover">
+  </div>
+  
+  Image -->
+  </div>
+
+    </div>
+
+
     <!--
     <div id="style" class="hidden flex-col space-y-3">
         <label class="text-base">Endre stilen</label>
