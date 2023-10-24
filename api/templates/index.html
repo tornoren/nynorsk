@@ -30,6 +30,17 @@
     <!-- Background Color -->
     <meta name="msapplication-TileColor" content="#ffffff">
 
+    <script type="text/javascript">
+      (function(window, document, dataLayerName, id) {
+      window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+      function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString();f="; SameSite=Strict"}document.cookie=a+"="+b+d+f+"; path=/"}
+      var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
+      var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
+      tags.async=!0,tags.src="https://torstein.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+      !function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+      })(window, document, 'dataLayer', '70fb49f0-e394-43f8-8bbc-5a4f9bb87493');
+      </script>
+
 
   </head>
 <body>
@@ -66,16 +77,17 @@
   <div class="flex flex-col md:flex-row">
     <div class="md:w-2/3">
       <p class="mb-4">
-        Denne tenesta er eit samarbeid mellom menneske og maskin. Målet er å vise at kognitivt kjedearbeid er noko vi kan bruke maskinen til, spesielt i det høvet der offentlege nettstader treng store mengder nynorsk innhald som ingen nokon gong vil kome i kontakt med. </p>
-        <p class="mb-4">Med AI i handa kan vi gjere loven nøgd.</p>
+        Denne tenesta er eit samarbeid mellom menneske og maskin. </p>
+        <p class="mb-4">Målet er å vise at kognitivt kjedearbeid er noko vi kan bruke maskinen til, spesielt i det høvet der offentlege nettstader treng store mengder nynorsk innhald som truleg svært få vil kome i kontakt med. </p>
+        <p class="mb-4">Med AI i handa kan vi oppfylle lovkravet om at 25 prosent av alt innhald skal være nynorsk - og samstundes bruke den menneskelege energien på å gjere brukarane nøgde.</p>
     
-      <h2 class="text-lg font-bold mb-2">Slik verkar denne maskinen</h3>
+      <h2 class="text-lg font-bold mb-2">Verkemåte og atterhald</h3>
       <ul class="list-disc list-inside mb-4">
-        <li class="my-2">Omsetting-API: Når du klikkar på den blå knappen, blir ein POST-førespurnad sendt til <code>/api/translate</code>-endepunktet. Teksten blir sendt som ein JSON-last.</li>
-        <li class="my-2">Tenarhandsaming: Tenaren mottar førespurnaden og fører teksten gjennom ein omsetjingsmotor.</li>
-        <li class="my-2">Omsetting: OpenAI sin GPT 3.5-modell omdannar målet til nynorsk og sender resultatet som eit JSON-objekt.</li>
+        <li class="my-2">Teknologi: Grensesnittet gjev ein konsistent og strukturert måte å snakke med API'et til Open AI på.</li>
+        <li class="my-2">Tekstlengde: Tekstboksen tek imot teksten du limar inn, men det fins ei grense når det gjeld summen av teikn. </li>
+        <li class="my-2">Resultatet: Den nynorske teksten kan ikkje brukas som den er: Ein omsetjar bør gå igjennom og sjå til at alt er som det skal.</li>
       </ul>
-      <p><a class="text-blue-600 underline-offset-2" href="https:/torstein.io/om">Torstein Norendal </a>har utvikla dette saman med ChatGPT. Skulle nokon ha bruk for denne tenesta meir enn som kuriosa, ta kontakt med meg.</p> 
+      <p><a class="text-blue-600 underline-offset-2" href="https:/torstein.io/om">Torstein Norendal </a>har utvikla dette saman med ChatGPT. Om nokon har spørsmål om denne tenesta, ta kontakt med meg.</p> 
     </div>
   <!--
   <div class="md:w-1/3 flex justify-end">
@@ -151,8 +163,7 @@
         </div>
         <button
           id="copyToClipboardButton"
-          class="mt-6 px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
+          class="mt-6 px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
           <svg
             class="w-3 h-3 text-white-800 mr-2 dark:text-white"
             aria-hidden="true"
