@@ -3,15 +3,15 @@
 
 // Get the tab elements
 const translationTab = document.getElementById('translation_tab');
-const styleTab = document.getElementById('style_tab');
-const imitationTab = document.getElementById('imitation_tab');
+//const styleTab = document.getElementById('style_tab');
+//const imitationTab = document.getElementById('imitation_tab');
 
 // Get the content elements
 const translationContent = document.getElementById('translation');
-const styleContent = document.getElementById('style');
-const imitationContent = document.getElementById('imitation');
+//const styleContent = document.getElementById('style');
+//const imitationContent = document.getElementById('imitation');
 
-
+/*
 // Add click event listeners to the tabs
 translationTab.addEventListener('click', function(event) {
   event.preventDefault();
@@ -21,7 +21,9 @@ translationTab.addEventListener('click', function(event) {
   imitationContent.style.display = 'none'
 
 });
+*/
 
+/*
 styleTab.addEventListener('click', function(event) {
   // Prevent the default behavior of the link
   event.preventDefault();
@@ -43,10 +45,10 @@ imitationTab.addEventListener('click', function(event) {
   imitationContent.style.display = 'block';
 
 });
-
+*/
 // Show the translation content by default
-styleContent.style.display = 'none';
-imitationContent.style.display = 'none';
+//styleContent.style.display = 'none';
+//imitationContent.style.display = 'none';
 translationContent.style.display = 'block';
 
 
@@ -59,14 +61,16 @@ function translateText() {
     openModalButton.addEventListener("click", function(event) {
       event.preventDefault();
       const textInput = document.getElementById("text-input").value;
-      const sliderValue = document.querySelector("input[type=range]").value;
+      //const sliderValue = document.querySelector("input[type=range]").value;
   
       fetch("/api/translate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ text: textInput, style: sliderValue }),
+        body: JSON.stringify({ text: textInput }),
+        //body: JSON.stringify({ text: textInput, style: sliderValue }),
+
       })
         .then((response) => response.json())
         .then((data) => {

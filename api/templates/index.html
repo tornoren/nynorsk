@@ -25,18 +25,22 @@
             <li class="mr-2" role="presentation">
                 <button class="inline-block p-4 border-b-2 rounded-t-lg" id="translation_tab" data-tabs-target="#translation" type="button" role="tab" aria-controls="translation" aria-selected="false">Oversetting</button>
             </li>
+            <!--
             <li class="mr-2" role="presentation">
                 <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="style_tab" data-tabs-target="#style" type="button" role="tab" aria-controls="style" aria-selected="false">Stilendring</button>
             </li>
             <li class="mr-2" role="presentation">
                 <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="imitation_tab" data-tabs-target="#imitation" type="button" role="tab" aria-controls="imitation" aria-selected="false">Etteraping</button>
-            </li>  
+            </li>
+            -->  
           </ul>
       </div>
     <div id="translation" class="flex flex-col space-y-3">
       <label for="text-input" class="text-base">Bokmålet</label>
       <textarea id="text-input" rows="5" class="w-full p-3 border rounded-md focus:ring focus:ring-opacity-50 focus:border-blue-300"></textarea>
     </div>
+
+    <!--
     <div id="style" class="hidden flex-col space-y-3">
         <label class="text-base">Endre stilen</label>
         <div class="relative ">
@@ -62,7 +66,7 @@
         </label>
       </div>
     </div>
-    
+    -->
 
         <!-- Left-aligned CTA button -->
         <div class="flex">
@@ -95,7 +99,7 @@
           </button>
         </div>
         <div class="mt-4">
-          <p id="translatedText" class="text-base text-gray-700"></p>
+          <pre class=""><p id="translatedText" class="font-sans text-gray-700 whitespace-pre-line"></p></pre>
         </div>
         <button
           id="copyToClipboardButton"
