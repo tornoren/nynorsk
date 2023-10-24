@@ -8,14 +8,15 @@
         openModalButton.addEventListener("click", function (event) {
           event.preventDefault();
           const textInput = document.getElementById("text-input").value;
-          const sliderValue = document.querySelector("input[type=range]").value;
+          //const sliderValue = document.querySelector("input[type=range]").value;
 
           fetch("/api/translate", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ text: textInput, style: sliderValue }),
+            body: JSON.stringify({ text: textInput }),
+            //body: JSON.stringify({ text: textInput, style: sliderValue }),
           })
             .then((response) => response.json())
             .then((data) => {
@@ -30,7 +31,6 @@
       });
 
       document.addEventListener("DOMContentLoaded", function () {
-        // ... existing code ...
 
         const copyToClipboardButton = document.getElementById(
           "copyToClipboardButton"
@@ -42,8 +42,7 @@
           navigator.clipboard
             .writeText(textToCopy)
             .then(() => {
-              // You can add a tooltip or message saying "Copied!"
-              alert("Nå hev du ein kopi på minnetavla di");
+              alert("Nå hev du ein kopi på minnetavla di som du kan sende til nokon som kan nynorsk");
             })
             .catch((err) => {
               // Handle errors here
